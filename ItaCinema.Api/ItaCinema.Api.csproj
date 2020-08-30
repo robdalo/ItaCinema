@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ItaCinema.Core\ItaCinema.Core.csproj" />
     <ProjectReference Include="..\ItaCinema.Domain\ItaCinema.Domain.csproj" />
   </ItemGroup>
 
