@@ -7,11 +7,17 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: "ubuntu-latest"
 
 variables:
-  buildConfiguration: 'Release'
+  buildConfiguration: "Release"
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: "Build"
+
+- task: DotNetCoreCLI@2
+  displayName: "Test"
+  inputs:
+      command: test
+      projects: "**/*Tests/*.csproj"

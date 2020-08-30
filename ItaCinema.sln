@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItaCinema.Web", "ItaCinema.Web\ItaCinema.Web.csproj", "{6B929742-5B3A-4EAC-BE8D-3C844FAFDE55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItaCinema.Web", "ItaCinema.Web\ItaCinema.Web.csproj", "{6B929742-5B3A-4EAC-BE8D-3C844FAFDE55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItaCinema.Api", "ItaCinema.Api\ItaCinema.Api.csproj", "{28C1526F-F0CB-4523-B1B7-EFCC49B1439F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItaCinema.Api", "ItaCinema.Api\ItaCinema.Api.csproj", "{28C1526F-F0CB-4523-B1B7-EFCC49B1439F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItaCinema.Domain", "ItaCinema.Domain\ItaCinema.Domain.csproj", "{41C3116F-4142-44AA-9BD4-7040E0117644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItaCinema.Domain", "ItaCinema.Domain\ItaCinema.Domain.csproj", "{41C3116F-4142-44AA-9BD4-7040E0117644}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItaCinema.Core", "ItaCinema.Core\ItaCinema.Core.csproj", "{5E5E5186-CCEC-42E4-A1DD-3CAB42793D03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItaCinema.Core", "ItaCinema.Core\ItaCinema.Core.csproj", "{5E5E5186-CCEC-42E4-A1DD-3CAB42793D03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItaCinema.Core.Tests", "ItaCinema.Core.Tests\ItaCinema.Core.Tests.csproj", "{6D2BAFC5-47C4-4301-9D36-56145FBDDEDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItaCinema.Core.Tests", "ItaCinema.Core.Tests\ItaCinema.Core.Tests.csproj", "{6D2BAFC5-47C4-4301-9D36-56145FBDDEDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66CF8DDD-2CBD-4BCC-B5C2-A4198C5EDD74}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +26,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6B929742-5B3A-4EAC-BE8D-3C844FAFDE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -86,5 +88,11 @@ Global
 		{6D2BAFC5-47C4-4301-9D36-56145FBDDEDE}.Release|x64.Build.0 = Release|Any CPU
 		{6D2BAFC5-47C4-4301-9D36-56145FBDDEDE}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D2BAFC5-47C4-4301-9D36-56145FBDDEDE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BC1CCC6-48BB-437C-A3BE-4B6B6593C0F7}
 	EndGlobalSection
 EndGlobal
