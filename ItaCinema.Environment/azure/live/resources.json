@@ -2,16 +2,16 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "sites_ItaCinemaApiApp_name": {
-      "defaultValue": "ItaCinemaApiApp",
+    "sites_ItaCinemaLiveApiApp_name": {
+      "defaultValue": "ItaCinemaLiveApiApp",
       "type": "String"
     },
-    "components_ItaCinemaApiApp_name": {
-      "defaultValue": "ItaCinemaApiApp",
+    "components_ItaCinemaLiveApiApp_name": {
+      "defaultValue": "ItaCinemaLiveApiApp",
       "type": "String"
     },
-    "serverfarms_ItaCinemaServicePlan_name": {
-      "defaultValue": "ItaCinemaServicePlan",
+    "serverfarms_ItaCinemaLiveServicePlan_name": {
+      "defaultValue": "ItaCinemaLiveServicePlan",
       "type": "String"
     }
   },
@@ -20,7 +20,7 @@
     {
       "type": "microsoft.insights/components",
       "apiVersion": "2018-05-01-preview",
-      "name": "[parameters('components_ItaCinemaApiApp_name')]",
+      "name": "[parameters('components_ItaCinemaLiveApiApp_name')]",
       "location": "centralus",
       "kind": "web",
       "properties": {
@@ -34,7 +34,7 @@
     {
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2018-02-01",
-      "name": "[parameters('serverfarms_ItaCinemaServicePlan_name')]",
+      "name": "[parameters('serverfarms_ItaCinemaLiveServicePlan_name')]",
       "location": "Central US",
       "sku": {
         "name": "F1",
@@ -58,27 +58,27 @@
     {
       "type": "Microsoft.Web/sites",
       "apiVersion": "2018-11-01",
-      "name": "[parameters('sites_ItaCinemaApiApp_name')]",
+      "name": "[parameters('sites_ItaCinemaLiveApiApp_name')]",
       "location": "Central US",
       "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ItaCinemaServicePlan_name'))]"
+        "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ItaCinemaLiveServicePlan_name'))]"
       ],
       "kind": "api",
       "properties": {
         "enabled": true,
         "hostNameSslStates": [
           {
-            "name": "itacinemaapiapp.azurewebsites.net",
+            "name": "itacinemaliveapiapp.azurewebsites.net",
             "sslState": "Disabled",
             "hostType": "Standard"
           },
           {
-            "name": "itacinemaapiapp.scm.azurewebsites.net",
+            "name": "itacinemaliveapiapp.scm.azurewebsites.net",
             "sslState": "Disabled",
             "hostType": "Repository"
           }
         ],
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ItaCinemaServicePlan_name'))]",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ItaCinemaLiveServicePlan_name'))]",
         "reserved": false,
         "isXenon": false,
         "hyperV": false,
@@ -96,10 +96,10 @@
     {
       "type": "Microsoft.Web/sites/config",
       "apiVersion": "2018-11-01",
-      "name": "[concat(parameters('sites_ItaCinemaApiApp_name'), '/web')]",
+      "name": "[concat(parameters('sites_ItaCinemaLiveApiApp_name'), '/web')]",
       "location": "Central US",
       "dependsOn": [
-        "[resourceId('Microsoft.Web/sites', parameters('sites_ItaCinemaApiApp_name'))]"
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ItaCinemaLiveApiApp_name'))]"
       ],
       "properties": {
         "numberOfWorkers": 1,
@@ -121,7 +121,7 @@
         "httpLoggingEnabled": false,
         "logsDirectorySizeLimit": 35,
         "detailedErrorLoggingEnabled": false,
-        "publishingUsername": "$ItaCinemaApiApp",
+        "publishingUsername": "$ItaCinemaLiveApiApp",
         "azureStorageAccounts": {},
         "scmType": "None",
         "use32BitWorkerProcess": true,
@@ -169,13 +169,13 @@
     {
       "type": "Microsoft.Web/sites/hostNameBindings",
       "apiVersion": "2018-11-01",
-      "name": "[concat(parameters('sites_ItaCinemaApiApp_name'), '/', parameters('sites_ItaCinemaApiApp_name'), '.azurewebsites.net')]",
+      "name": "[concat(parameters('sites_ItaCinemaLiveApiApp_name'), '/', parameters('sites_ItaCinemaLiveApiApp_name'), '.azurewebsites.net')]",
       "location": "Central US",
       "dependsOn": [
-        "[resourceId('Microsoft.Web/sites', parameters('sites_ItaCinemaApiApp_name'))]"
+        "[resourceId('Microsoft.Web/sites', parameters('sites_ItaCinemaLiveApiApp_name'))]"
       ],
       "properties": {
-        "siteName": "ItaCinemaApiApp",
+        "siteName": "ItaCinemaLiveApiApp",
         "hostNameType": "Verified"
       }
     }
