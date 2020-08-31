@@ -23,12 +23,22 @@ steps:
       projects: "**/*Tests/*.csproj"
 
 - task: DotNetCoreCLI@2
-  displayName: "Package"
+  displayName: "Package Api"
   inputs:
     command: publish
     publishWebProjects: false
     projects: ItaCinema.Api/*.csproj
     arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
+    artifactName: ItaCinema.Api
+
+- task: DotNetCoreCLI@2
+  displayName: "Package Functions"
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: ItaCinema.Functions/*.csproj
+    arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
+    artifactName: ItaCinema.Functions
 
 - task: PublishBuildArtifacts@1
   displayName: "Publish"
