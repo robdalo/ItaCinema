@@ -29,7 +29,17 @@ steps:
     publishWebProjects: false
     projects: ItaCinema.Api/*.csproj
     arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
-    artifactName: ItaCinema.Api
+
+- task: PublishBuildArtifacts@1
+  displayName: "Publish"
+  inputs:
+    artifactName: "ItaCinema.Api"
+
+- task: DeleteFiles@1
+  displayName: 'Clean Staging Directory'
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**'
 
 - task: DotNetCoreCLI@2
   displayName: "Package Functions"
@@ -38,7 +48,8 @@ steps:
     publishWebProjects: false
     projects: ItaCinema.Functions/*.csproj
     arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
-    artifactName: ItaCinema.Functions
 
 - task: PublishBuildArtifacts@1
   displayName: "Publish"
+  inputs:
+    artifactName: "ItaCinema.Functions"
