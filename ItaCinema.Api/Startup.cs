@@ -25,8 +25,9 @@ namespace ItaCinema.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var dependencyInjector = new DependencyInjector();
+            var serviceBusConnectionString = "Endpoint=sb://itacinemastaging.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Kesd97aHDX+mbqwXLsOWcLM92axn2T+3hHXxV7L2N6I=";
 
+            var dependencyInjector = new DependencyInjector(serviceBusConnectionString);
             dependencyInjector.Configure(services);
 
             services.AddControllers();
